@@ -7,6 +7,7 @@ def clean(contact_info_file, other_info_file):
     df = pd.merge(df1, df2, left_on='respondent_id', right_on='id').drop('id', axis=1)
     df = df.dropna()
     df = df[~ df['job'].str.contains('Insurance|insurance')]
+    print(df.shape)
     return df
 
 
